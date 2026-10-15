@@ -1,5 +1,6 @@
 import { MapPin, Phone, MessageSquare, CheckCircle2 } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/plumbingData';
+import commercialPlumbingImage from '../assets/images/service_commercial_plumbing_1792089015201.jpg';
 
 export function About() {
   const highlights = [
@@ -19,7 +20,7 @@ export function About() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-white">
                 <img
-                  src="/src/assets/images/service_commercial_plumbing_1792089015201.jpg"
+                  src={commercialPlumbingImage}
                   alt="Pipe fittings and plumbing equipment by Roy Plumbing Services"
                   referrerPolicy="no-referrer"
                   className="w-full h-80 object-cover"

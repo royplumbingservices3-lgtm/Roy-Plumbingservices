@@ -1,4 +1,10 @@
 import { PlumbingServiceItem, GalleryItem } from '../types';
+import heroPlumberImage from '../assets/images/hero_plumber_repair_1792089013746.jpg';
+import leakRepairImage from '../assets/images/service_leak_repair_1792089014382.jpg';
+import waterTankImage from '../assets/images/service_water_tank_1792089014291.jpg';
+import bathroomPipesImage from '../assets/images/service_bathroom_pipes_1792089032856.jpg';
+import bathroomFaucetImage from '../assets/images/service_bathroom_faucet_1792089014459.jpg';
+import commercialPlumbingImage from '../assets/images/service_commercial_plumbing_1792089015201.jpg';
 
 export const BUSINESS_INFO = {
   name: 'Roy Plumbing Services',
@@ -13,7 +19,7 @@ export const BUSINESS_INFO = {
   availability: '24/7 Service',
   businessType: 'Residential and Commercial Plumbing Services',
   promotionalHighlight: 'Quality Plumbing at Affordable Prices!',
-  heroImage: '/src/assets/images/hero_plumber_repair_1792089013746.jpg',
+  heroImage: heroPlumberImage,
 };
 
 export const SERVICES: PlumbingServiceItem[] = [
@@ -21,7 +27,7 @@ export const SERVICES: PlumbingServiceItem[] = [
     id: 'leak-repair',
     title: 'Leak Repair',
     description: 'Professional repair solutions for leaking pipes and water connections.',
-    image: '/src/assets/images/service_leak_repair_1792089014382.jpg',
+    image: leakRepairImage,
     features: [
       'Concealed & exposed pipe leak repair',
       'High-pressure joint sealing',
@@ -32,7 +38,7 @@ export const SERVICES: PlumbingServiceItem[] = [
     id: 'water-tank-installation',
     title: 'Water Tank Installation',
     description: 'Reliable water tank installation and plumbing connections.',
-    image: '/src/assets/images/service_water_tank_1792089014291.jpg',
+    image: waterTankImage,
     features: [
       'Rooftop water storage tank fitting',
       'Inlet, outlet & overflow piping',
@@ -43,7 +49,7 @@ export const SERVICES: PlumbingServiceItem[] = [
     id: 'pipe-fitting-replacement',
     title: 'Pipe Fitting & Replacement',
     description: 'Pipe fitting, replacement, and plumbing connection services.',
-    image: '/src/assets/images/service_bathroom_pipes_1792089032856.jpg',
+    image: bathroomPipesImage,
     features: [
       'CPVC, UPVC, PVC & GI pipe installations',
       'Corroded and damaged pipe replacements',
@@ -54,7 +60,7 @@ export const SERVICES: PlumbingServiceItem[] = [
     id: 'bathroom-plumbing',
     title: 'Bathroom Plumbing',
     description: 'Bathroom plumbing repairs, installations, and fitting solutions.',
-    image: '/src/assets/images/service_bathroom_faucet_1792089014459.jpg',
+    image: bathroomFaucetImage,
     features: [
       'Shower, geyser & drain line fittings',
       'Sanitaryware connection & repairs',
@@ -65,7 +71,7 @@ export const SERVICES: PlumbingServiceItem[] = [
     id: 'tap-faucet-repair',
     title: 'Tap & Faucet Repair',
     description: 'Tap, mixer, and faucet repair or installation services.',
-    image: '/src/assets/images/service_bathroom_faucet_1792089014459.jpg',
+    image: bathroomFaucetImage,
     features: [
       'Dripping and jammed tap repair',
       'Wall mixer & sink faucet replacement',
@@ -76,7 +82,7 @@ export const SERVICES: PlumbingServiceItem[] = [
     id: 'residential-commercial',
     title: 'Residential & Commercial Plumbing',
     description: 'Plumbing solutions for homes, apartments, offices, and commercial properties.',
-    image: '/src/assets/images/service_commercial_plumbing_1792089015201.jpg',
+    image: commercialPlumbingImage,
     features: [
       'Residential houses & apartment repairs',
       'Office, retail & commercial plumbing care',
@@ -92,7 +98,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Leak Repair',
     categoryKey: 'leak-repair',
     description: 'Precision joint tightening and leak repair on residential water lines.',
-    image: '/src/assets/images/service_leak_repair_1792089014382.jpg',
+    image: leakRepairImage,
   },
   {
     id: 'gal-2',
@@ -100,7 +106,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Water Tank Installation',
     categoryKey: 'water-tank',
     description: 'Heavy-duty water tank installation with clean bypass valves and sturdy pipe support.',
-    image: '/src/assets/images/service_water_tank_1792089014291.jpg',
+    image: waterTankImage,
   },
   {
     id: 'gal-3',
@@ -108,7 +114,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Bathroom Plumbing',
     categoryKey: 'bathroom',
     description: 'Concealed copper and CPVC water line installation for modern bathrooms.',
-    image: '/src/assets/images/service_bathroom_pipes_1792089032856.jpg',
+    image: bathroomPipesImage,
   },
   {
     id: 'gal-4',
@@ -116,7 +122,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Tap & Faucet Repair',
     categoryKey: 'faucet',
     description: 'Precision mounting and leak-free sealing of luxury basin mixer tap.',
-    image: '/src/assets/images/service_bathroom_faucet_1792089014459.jpg',
+    image: bathroomFaucetImage,
   },
   {
     id: 'gal-5',
@@ -124,7 +130,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Residential & Commercial Projects',
     categoryKey: 'commercial',
     description: 'Commercial grade pipe network with pressure valves and clean multi-line drainage.',
-    image: '/src/assets/images/service_commercial_plumbing_1792089015201.jpg',
+    image: commercialPlumbingImage,
   },
   {
     id: 'gal-6',
@@ -132,7 +138,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Pipe Fitting & Replacement',
     categoryKey: 'pipe-fitting',
     description: 'Clean under-sink pipe fitting, P-trap realignment, and water waste connection.',
-    image: '/src/assets/images/hero_plumber_repair_1792089013746.jpg',
+    image: heroPlumberImage,
   },
 ];
 
