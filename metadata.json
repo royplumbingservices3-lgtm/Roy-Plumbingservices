@@ -1,0 +1,6 @@
+{
+  "name": "Roy Plumbing Services",
+  "description": "Professional residential and commercial plumbing services in Rohini, Delhi Sector 25 with 24/7 service availability.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
