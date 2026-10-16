@@ -67,7 +67,7 @@ export function Services({ onBookService }: ServicesProps) {
                   <button
                     type="button"
                     onClick={() => onBookService(service)}
-                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-blue-50 hover:bg-blue-600 text-blue-700 hover:text-white font-bold text-sm transition-all group/btn shadow-2xs"
+                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-blue-50 hover:bg-blue-600 active:bg-blue-700 text-blue-700 hover:text-white font-bold text-sm transition-all group/btn shadow-2xs min-h-[44px]"
                   >
                     <span>Book This Service</span>
                     <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />

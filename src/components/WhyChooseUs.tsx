@@ -76,7 +76,7 @@ export function WhyChooseUs() {
             <div className="pt-6 mt-6 flex flex-col gap-2.5">
               <a
                 href={BUSINESS_INFO.phoneTel}
-                className="w-full text-center py-3 px-4 rounded-xl bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-slate-950 font-bold text-sm transition-colors shadow"
+                className="w-full text-center py-3.5 px-4 rounded-xl bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-slate-950 font-bold text-sm transition-colors shadow min-h-[46px] flex items-center justify-center"
               >
                 Call: {BUSINESS_INFO.phone}
               </a>
@@ -84,7 +84,7 @@ export function WhyChooseUs() {
                 href={BUSINESS_INFO.whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full text-center py-2.5 px-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs border border-white/20 transition-colors"
+                className="w-full text-center py-3 px-4 rounded-xl bg-white/10 hover:bg-white/20 active:bg-white/30 text-white font-semibold text-xs border border-white/20 transition-colors min-h-[44px] flex items-center justify-center"
               >
                 Quick WhatsApp Message
               </a>

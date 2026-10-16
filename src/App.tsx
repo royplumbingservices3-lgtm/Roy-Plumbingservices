@@ -5,7 +5,6 @@ import { TrustStrip } from './components/TrustStrip';
 import { About } from './components/About';
 import { Services } from './components/Services';
 import { WhyChooseUs } from './components/WhyChooseUs';
-import { Gallery } from './components/Gallery';
 import { ContactAndForm } from './components/ContactAndForm';
 import { Footer } from './components/Footer';
 import { FloatingActions } from './components/FloatingActions';
@@ -38,7 +37,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-slate-900 pb-16 sm:pb-0 selection:bg-amber-400 selection:text-slate-950">
+    <div className="min-h-screen flex flex-col bg-white text-slate-900 pb-24 sm:pb-0 selection:bg-amber-400 selection:text-slate-950">
       {/* Navigation Header */}
       <Header onSelectService={handleSelectServiceFromGallery} />
 
@@ -58,9 +57,6 @@ export default function App() {
 
         {/* Why Choose Us? (Premium Blue & Yellow Section) */}
         <WhyChooseUs />
-
-        {/* Our Work Gallery */}
-        <Gallery onSelectServiceForBooking={handleSelectServiceFromGallery} />
 
         {/* Contact & Service Inquiry Form */}
         <ContactAndForm

@@ -20,14 +20,14 @@ export function FloatingActions() {
         </a>
       </div>
 
-      {/* Compact Mobile Bottom Bar (Under 15% mobile sticky cap) */}
-      <div className="fixed bottom-0 inset-x-0 z-40 sm:hidden bg-slate-950/95 backdrop-blur-md border-t border-slate-800 p-2.5 flex items-center gap-2 shadow-2xl">
+      {/* Compact Mobile Bottom Bar (Complies with 15% mobile sticky cap & safe-area insets) */}
+      <div className="fixed bottom-0 inset-x-0 z-40 sm:hidden bg-slate-950/95 backdrop-blur-md border-t border-slate-800/90 px-3 pt-2.5 pb-[calc(0.6rem+env(safe-area-inset-bottom,0px))] flex items-center gap-2.5 shadow-2xl">
         <a
           href={BUSINESS_INFO.phoneTel}
-          className="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-amber-400 active:bg-amber-500 text-slate-950 font-extrabold text-xs tracking-tight shadow"
+          className="flex-1 flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-amber-400 active:bg-amber-500 text-slate-950 font-extrabold text-xs sm:text-sm tracking-tight shadow min-h-[44px]"
           aria-label="Call Roy Plumbing Services now"
         >
-          <Phone className="w-4 h-4 text-slate-950" />
+          <Phone className="w-4 h-4 text-slate-950 shrink-0" />
           <span>Call: {BUSINESS_INFO.phone}</span>
         </a>
 
@@ -35,10 +35,10 @@ export function FloatingActions() {
           href={BUSINESS_INFO.whatsappUrl}
           target="_blank"
           rel="noreferrer"
-          className="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-emerald-600 active:bg-emerald-700 text-white font-extrabold text-xs tracking-tight shadow"
+          className="flex-1 flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-emerald-600 active:bg-emerald-700 text-white font-extrabold text-xs sm:text-sm tracking-tight shadow min-h-[44px]"
           aria-label="WhatsApp Roy Plumbing Services"
         >
-          <MessageSquare className="w-4 h-4 text-white" />
+          <MessageSquare className="w-4 h-4 text-white shrink-0" />
           <span>WhatsApp</span>
         </a>
       </div>

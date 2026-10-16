@@ -11,7 +11,6 @@ export function Footer({ onSelectService }: FooterProps) {
     { name: 'Home', href: '#home' },
     { name: 'About Us', href: '#about' },
     { name: 'Our Services', href: '#services' },
-    { name: 'Gallery', href: '#gallery' },
     { name: 'Contact Us', href: '#contact' },
   ];
 
@@ -93,9 +92,21 @@ export function Footer({ onSelectService }: FooterProps) {
 
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                <span className="text-slate-300">
-                  {BUSINESS_INFO.location}
-                </span>
+                <div>
+                  <a
+                    href={BUSINESS_INFO.googleMapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-300 hover:text-amber-400 transition-colors inline-flex items-center gap-1 group font-medium"
+                    title="Open Roy Plumbing Services on Google Maps"
+                  >
+                    <span>{BUSINESS_INFO.location}</span>
+                    <ArrowUpRight className="w-3 h-3 text-slate-500 group-hover:text-amber-400" />
+                  </a>
+                  <div className="text-[11px] text-slate-400 mt-0.5">
+                    {BUSINESS_INFO.fullAddress}
+                  </div>
+                </div>
               </li>
 
               <li className="flex items-start gap-2.5">

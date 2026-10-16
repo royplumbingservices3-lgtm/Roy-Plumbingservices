@@ -19,7 +19,7 @@ export function Gallery({ onSelectServiceForBooking }: GalleryProps) {
     { key: 'pipe-fitting', label: 'Pipe Fitting & Replacement' },
     { key: 'bathroom', label: 'Bathroom Plumbing' },
     { key: 'faucet', label: 'Tap & Faucet Repair' },
-    { key: 'commercial', label: 'Residential & Commercial' },
+    { key: 'cpvc-repair', label: 'CPVC Pipe Repair' },
   ];
 
   const filteredItems =
@@ -41,8 +41,8 @@ export function Gallery({ onSelectServiceForBooking }: GalleryProps) {
           </p>
         </div>
 
-        {/* Filter Controls (Segmented Tabs) */}
-        <div className="flex flex-wrap items-center justify-center gap-1.5 p-1.5 bg-slate-200/70 rounded-xl max-w-3xl mx-auto mb-10">
+        {/* Filter Controls (Horizontally scrollable on mobile, centered on desktop) */}
+        <div className="flex items-center sm:justify-center gap-1.5 p-1.5 bg-slate-200/80 rounded-xl max-w-3xl mx-auto mb-8 sm:mb-10 overflow-x-auto no-scrollbar scroll-smooth">
           {filterOptions.map((filter) => {
             const isActive = activeFilter === filter.key;
             return (
@@ -50,10 +50,10 @@ export function Gallery({ onSelectServiceForBooking }: GalleryProps) {
                 key={filter.key}
                 type="button"
                 onClick={() => setActiveFilter(filter.key)}
-                className={`px-3 py-1.5 text-xs sm:text-sm font-semibold rounded-lg transition-all whitespace-nowrap shrink-0 ${
+                className={`px-3.5 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all whitespace-nowrap shrink-0 min-h-[38px] ${
                   isActive
                     ? 'bg-blue-700 text-white shadow-xs'
-                    : 'text-slate-700 hover:text-slate-900 hover:bg-white/60'
+                    : 'text-slate-700 hover:text-slate-900 hover:bg-white/60 active:bg-white/80'
                 }`}
               >
                 {filter.label}

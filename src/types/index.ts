@@ -18,6 +18,7 @@ export interface GalleryItem {
 export interface InquiryFormData {
   fullName: string;
   phoneNumber: string;
+  address: string;
   service: string;
   message: string;
 }

@@ -1,10 +1,13 @@
 import { PlumbingServiceItem, GalleryItem } from '../types';
-import heroPlumberImage from '../assets/images/hero_plumber_repair_1792089013746.jpg';
-import leakRepairImage from '../assets/images/service_leak_repair_1792089014382.jpg';
-import waterTankImage from '../assets/images/service_water_tank_1792089014291.jpg';
-import bathroomPipesImage from '../assets/images/service_bathroom_pipes_1792089032856.jpg';
-import bathroomFaucetImage from '../assets/images/service_bathroom_faucet_1792089014459.jpg';
-import commercialPlumbingImage from '../assets/images/service_commercial_plumbing_1792089015201.jpg';
+import indianPlumberWashbasinImage from '../assets/images/indian_plumber_washbasin_repair_1792142098176.jpg';
+import indianPlumberLeakRepairImage from '../assets/images/indian_plumber_leak_repair_1792143461584.jpg';
+import indianTankInstallImage from '../assets/images/indian_tank_install_1792144139124.jpg';
+import indianPipeFittingImage from '../assets/images/indian_pipe_fitting_1792144083527.jpg';
+import indianBathroomWorkImage from '../assets/images/indian_bathroom_work_1792144104750.jpg';
+import indianTapRepairImage from '../assets/images/indian_tap_repair_1792144122657.jpg';
+import indianCpvcPipeRepairImage from '../assets/images/indian_cpvc_pipe_repair_1792143849040.jpg';
+
+import royLogoImage from '../assets/images/roy_plumbing_logo.png';
 
 export const BUSINESS_INFO = {
   name: 'Roy Plumbing Services',
@@ -16,10 +19,13 @@ export const BUSINESS_INFO = {
   whatsappUrl:
     'https://wa.me/919582885917?text=Hello%20Roy%20Plumbing%20Services%2C%20I%20need%20plumbing%20services.%20Please%20contact%20me.',
   location: 'Rohini, Delhi, Sector 25',
+  fullAddress: 'Sector 25, Rohini, North West Delhi - 110085, India',
+  googleMapUrl: 'https://share.google/uBeOsd8eUNZdRPXvW',
   availability: '24/7 Service',
   businessType: 'Residential and Commercial Plumbing Services',
   promotionalHighlight: 'Quality Plumbing at Affordable Prices!',
-  heroImage: heroPlumberImage,
+  heroImage: indianPlumberWashbasinImage,
+  logoImage: royLogoImage,
 };
 
 export const SERVICES: PlumbingServiceItem[] = [
@@ -27,7 +33,7 @@ export const SERVICES: PlumbingServiceItem[] = [
     id: 'leak-repair',
     title: 'Leak Repair',
     description: 'Professional repair solutions for leaking pipes and water connections.',
-    image: leakRepairImage,
+    image: indianPlumberLeakRepairImage,
     features: [
       'Concealed & exposed pipe leak repair',
       'High-pressure joint sealing',
@@ -38,7 +44,7 @@ export const SERVICES: PlumbingServiceItem[] = [
     id: 'water-tank-installation',
     title: 'Water Tank Installation',
     description: 'Reliable water tank installation and plumbing connections.',
-    image: waterTankImage,
+    image: indianTankInstallImage,
     features: [
       'Rooftop water storage tank fitting',
       'Inlet, outlet & overflow piping',
@@ -49,7 +55,7 @@ export const SERVICES: PlumbingServiceItem[] = [
     id: 'pipe-fitting-replacement',
     title: 'Pipe Fitting & Replacement',
     description: 'Pipe fitting, replacement, and plumbing connection services.',
-    image: bathroomPipesImage,
+    image: indianPipeFittingImage,
     features: [
       'CPVC, UPVC, PVC & GI pipe installations',
       'Corroded and damaged pipe replacements',
@@ -60,7 +66,7 @@ export const SERVICES: PlumbingServiceItem[] = [
     id: 'bathroom-plumbing',
     title: 'Bathroom Plumbing',
     description: 'Bathroom plumbing repairs, installations, and fitting solutions.',
-    image: bathroomFaucetImage,
+    image: indianBathroomWorkImage,
     features: [
       'Shower, geyser & drain line fittings',
       'Sanitaryware connection & repairs',
@@ -71,7 +77,7 @@ export const SERVICES: PlumbingServiceItem[] = [
     id: 'tap-faucet-repair',
     title: 'Tap & Faucet Repair',
     description: 'Tap, mixer, and faucet repair or installation services.',
-    image: bathroomFaucetImage,
+    image: indianTapRepairImage,
     features: [
       'Dripping and jammed tap repair',
       'Wall mixer & sink faucet replacement',
@@ -79,14 +85,14 @@ export const SERVICES: PlumbingServiceItem[] = [
     ],
   },
   {
-    id: 'residential-commercial',
-    title: 'Residential & Commercial Plumbing',
-    description: 'Plumbing solutions for homes, apartments, offices, and commercial properties.',
-    image: commercialPlumbingImage,
+    id: 'cpvc-pipe-repair',
+    title: 'CPVC Pipe Repair',
+    description: 'Expert CPVC pipe leak repair, crack fixing, and solvent weld joint sealing.',
+    image: indianCpvcPipeRepairImage,
     features: [
-      'Residential houses & apartment repairs',
-      'Office, retail & commercial plumbing care',
-      'Emergency maintenance & comprehensive repairs',
+      'CPVC line leak detection & prompt repair',
+      'Solvent weld joint bonding & union fittings',
+      'Hot & cold water line maintenance',
     ],
   },
 ];
@@ -98,7 +104,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Leak Repair',
     categoryKey: 'leak-repair',
     description: 'Precision joint tightening and leak repair on residential water lines.',
-    image: leakRepairImage,
+    image: indianPlumberLeakRepairImage,
   },
   {
     id: 'gal-2',
@@ -106,7 +112,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Water Tank Installation',
     categoryKey: 'water-tank',
     description: 'Heavy-duty water tank installation with clean bypass valves and sturdy pipe support.',
-    image: waterTankImage,
+    image: indianTankInstallImage,
   },
   {
     id: 'gal-3',
@@ -114,7 +120,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Bathroom Plumbing',
     categoryKey: 'bathroom',
     description: 'Concealed copper and CPVC water line installation for modern bathrooms.',
-    image: bathroomPipesImage,
+    image: indianBathroomWorkImage,
   },
   {
     id: 'gal-4',
@@ -122,23 +128,23 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     category: 'Tap & Faucet Repair',
     categoryKey: 'faucet',
     description: 'Precision mounting and leak-free sealing of luxury basin mixer tap.',
-    image: bathroomFaucetImage,
+    image: indianTapRepairImage,
   },
   {
     id: 'gal-5',
-    title: 'Commercial Water Distribution Manifold',
-    category: 'Residential & Commercial Projects',
-    categoryKey: 'commercial',
-    description: 'Commercial grade pipe network with pressure valves and clean multi-line drainage.',
-    image: commercialPlumbingImage,
+    title: 'CPVC Pipeline Repair & Solvent Welding',
+    category: 'CPVC Pipe Repair',
+    categoryKey: 'cpvc-repair',
+    description: 'Expert repair of concealed and open CPVC hot/cold water pipeline joints.',
+    image: indianCpvcPipeRepairImage,
   },
   {
     id: 'gal-6',
-    title: 'Kitchen Sink Drainage & Trap Replacement',
+    title: 'Pipe Fitting & Replacement Project',
     category: 'Pipe Fitting & Replacement',
     categoryKey: 'pipe-fitting',
-    description: 'Clean under-sink pipe fitting, P-trap realignment, and water waste connection.',
-    image: heroPlumberImage,
+    description: 'Clean in-wall pipe fitting, valve alignment, and sturdy water line replacement.',
+    image: indianPipeFittingImage,
   },
 ];
 
