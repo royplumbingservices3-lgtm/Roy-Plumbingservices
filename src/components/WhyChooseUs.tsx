@@ -1,5 +1,6 @@
-import { Award, Zap, IndianRupee, Wrench, Clock, CheckCircle } from 'lucide-react';
+import { Award, Zap, IndianRupee, Wrench, Clock, CheckCircle, Phone } from 'lucide-react';
 import { WHY_CHOOSE_US, BUSINESS_INFO } from '../data/plumbingData';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 export function WhyChooseUs() {
   const iconMap = [
@@ -76,17 +77,19 @@ export function WhyChooseUs() {
             <div className="pt-6 mt-6 flex flex-col gap-2.5">
               <a
                 href={BUSINESS_INFO.phoneTel}
-                className="w-full text-center py-3.5 px-4 rounded-xl bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-slate-950 font-bold text-sm transition-colors shadow min-h-[46px] flex items-center justify-center"
+                className="w-full text-center py-3.5 px-4 rounded-xl bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-slate-950 font-bold text-sm transition-colors shadow min-h-[46px] flex items-center justify-center gap-2"
               >
-                Call: {BUSINESS_INFO.phone}
+                <Phone className="w-4 h-4 text-slate-950" />
+                <span>Call: {BUSINESS_INFO.phone}</span>
               </a>
               <a
                 href={BUSINESS_INFO.whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full text-center py-3 px-4 rounded-xl bg-white/10 hover:bg-white/20 active:bg-white/30 text-white font-semibold text-xs border border-white/20 transition-colors min-h-[44px] flex items-center justify-center"
+                className="w-full text-center py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-bold text-xs shadow-md transition-colors min-h-[44px] flex items-center justify-center gap-2"
               >
-                Quick WhatsApp Message
+                <WhatsAppIcon className="w-4 h-4 text-white shrink-0" />
+                <span>Quick WhatsApp Message</span>
               </a>
             </div>
           </div>

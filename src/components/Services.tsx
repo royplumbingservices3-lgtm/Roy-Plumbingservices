@@ -1,6 +1,7 @@
 import { SERVICES } from '../data/plumbingData';
 import { ArrowRight, Check } from 'lucide-react';
 import { PlumbingServiceItem } from '../types';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 interface ServicesProps {
   onBookService: (service: PlumbingServiceItem) => void;
@@ -62,16 +63,30 @@ export function Services({ onBookService }: ServicesProps) {
                   </ul>
                 </div>
 
-                {/* Book This Service Button */}
-                <div className="pt-2">
+                {/* Service Card Actions */}
+                <div className="pt-2 flex items-center gap-2">
                   <button
                     type="button"
                     onClick={() => onBookService(service)}
-                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-blue-50 hover:bg-blue-600 active:bg-blue-700 text-blue-700 hover:text-white font-bold text-sm transition-all group/btn shadow-2xs min-h-[44px]"
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-blue-50 hover:bg-blue-600 active:bg-blue-700 text-blue-700 hover:text-white font-bold text-xs sm:text-sm transition-all group/btn shadow-2xs min-h-[42px]"
                   >
-                    <span>Book This Service</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+                    <span>Book Service</span>
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
                   </button>
+
+                  <a
+                    href={`https://wa.me/919582885917?text=${encodeURIComponent(
+                      `Hello Roy Plumbing Services, I need assistance with "${service.title}". Please provide details.`
+                    )}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-bold text-xs sm:text-sm shadow-xs transition-all min-h-[42px]"
+                    title={`Inquire about ${service.title} on WhatsApp`}
+                    aria-label={`Inquire about ${service.title} on WhatsApp`}
+                  >
+                    <WhatsAppIcon className="w-4 h-4 text-white shrink-0" />
+                    <span className="hidden sm:inline">WhatsApp</span>
+                  </a>
                 </div>
               </div>
             </div>

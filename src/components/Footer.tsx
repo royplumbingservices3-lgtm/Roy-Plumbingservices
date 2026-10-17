@@ -1,4 +1,5 @@
 import { Logo } from './Logo';
+import { WhatsAppIcon } from './WhatsAppIcon';
 import { BUSINESS_INFO, SERVICES } from '../data/plumbingData';
 import { Phone, MapPin, Clock, ArrowUpRight } from 'lucide-react';
 
@@ -20,7 +21,7 @@ export function Footer({ onSelectService }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
           {/* Col 1: Brand & Tagline */}
           <div className="lg:col-span-4 space-y-4">
-            <Logo variant="light" />
+            <Logo variant="light" enableUploadOnClick={true} />
             <p className="text-amber-400 font-bold text-sm tracking-wide">
               “{BUSINESS_INFO.mainTagline}”
             </p>
@@ -87,6 +88,22 @@ export function Footer({ onSelectService }: FooterProps) {
                     {BUSINESS_INFO.phone}
                   </a>
                   <span className="text-[11px] text-slate-400">Direct Plumber Hotline</span>
+                </div>
+              </li>
+
+              <li className="flex items-start gap-2.5">
+                <WhatsAppIcon className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <div>
+                  <a
+                    href={BUSINESS_INFO.whatsappUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-bold text-emerald-400 hover:text-emerald-300 transition-colors inline-flex items-center gap-1.5"
+                  >
+                    <span>Chat on WhatsApp</span>
+                    <ArrowUpRight className="w-3 h-3 text-emerald-500" />
+                  </a>
+                  <div className="text-[11px] text-slate-400">Instant WhatsApp Support</div>
                 </div>
               </li>
 

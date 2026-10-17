@@ -1,12 +1,15 @@
-import { Phone, MessageSquare, ArrowDown, Clock, Zap, ShieldCheck, Tag } from 'lucide-react';
+import { Phone, ArrowDown, Clock, Zap, ShieldCheck, Tag } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/plumbingData';
 import { WashbasinAnimation } from './WashbasinAnimation';
+import { WhatsAppIcon } from './WhatsAppIcon';
+import { useBrandLogo } from '../utils/useBrandLogo';
 
 interface HeroProps {
   onExploreServices: () => void;
 }
 
 export function Hero({ onExploreServices }: HeroProps) {
+  const { logoUrl } = useBrandLogo();
   const trustHighlights = [
     { icon: Clock, label: '24/7 Service' },
     { icon: Zap, label: 'Quick Response' },
@@ -36,10 +39,10 @@ export function Hero({ onExploreServices }: HeroProps) {
             {/* Brand Logo & Location Kicker */}
             <div className="flex items-center gap-3.5 bg-blue-950/60 backdrop-blur-xs border border-blue-800/60 rounded-2xl p-2.5 sm:p-3 w-fit pr-4 sm:pr-5 shadow-inner">
               <img
-                src={BUSINESS_INFO.logoImage}
+                src={logoUrl}
                 alt="Roy Plumbing Services Logo"
                 referrerPolicy="no-referrer"
-                className="w-11 h-11 sm:w-12 sm:h-12 rounded-full object-contain p-0.5 ring-2 ring-amber-400 shadow-md bg-white shrink-0"
+                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-contain p-0.5 ring-2 ring-amber-400 shadow-md bg-white shrink-0"
               />
               <div className="flex flex-col">
                 <span className="text-xs sm:text-sm font-extrabold tracking-wide uppercase text-white">
@@ -58,34 +61,28 @@ export function Hero({ onExploreServices }: HeroProps) {
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15] [text-wrap:balance]">
                 {BUSINESS_INFO.mainTagline}
               </h1>
-              <p className="text-lg sm:text-2xl font-bold text-amber-400 leading-snug">
+              <p className="text-amber-400 font-bold text-lg sm:text-xl tracking-wide">
                 {BUSINESS_INFO.secondaryTagline}
               </p>
             </div>
 
-            {/* Promotional Highlight */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-400/10 border border-amber-400/30 text-amber-300 text-xs sm:text-sm font-bold w-fit">
-              <span className="w-2 h-2 rounded-full bg-amber-400 shrink-0" />
-              <span>{BUSINESS_INFO.promotionalHighlight}</span>
-            </div>
-
-            {/* Supporting Text */}
-            <p className="text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed max-w-2xl">
-              Reliable plumbing solutions for your home and business. From leak repairs to water tank
-              installations, we deliver quality workmanship at affordable prices across Rohini and North West Delhi.
+            {/* Descriptive Summary */}
+            <p className="text-slate-200 text-sm sm:text-base leading-relaxed max-w-2xl font-normal">
+              Rohini Sector 25, Delhi me fast aur dependable residential & commercial plumbing services.
+              Concealed pipe leak repair, washbasin fitting, water tank installation aur complete sanitary pipeline maintenance with transparent, affordable pricing.
             </p>
 
-            {/* Trust Highlights Checklist */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 pt-1">
+            {/* Micro Trust Strip / Proof Points */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 py-2">
               {trustHighlights.map((item) => {
-                const IconComponent = item.icon;
+                const Icon = item.icon;
                 return (
                   <div
                     key={item.label}
-                    className="flex items-center gap-2 p-2 sm:p-2.5 rounded-lg bg-blue-900/40 border border-blue-700/40 text-slate-200"
+                    className="flex items-center gap-2 px-3 py-2 rounded-xl bg-blue-950/70 border border-blue-800/50 text-xs text-slate-200"
                   >
-                    <IconComponent className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400 shrink-0" />
-                    <span className="text-[11px] sm:text-xs font-semibold tracking-tight whitespace-nowrap">{item.label}</span>
+                    <Icon className="w-4 h-4 text-amber-400 shrink-0" />
+                    <span className="font-medium whitespace-nowrap">{item.label}</span>
                   </div>
                 );
               })}
@@ -98,17 +95,18 @@ export function Hero({ onExploreServices }: HeroProps) {
                 className="inline-flex items-center justify-center gap-2.5 px-5 sm:px-6 py-3.5 rounded-xl bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-slate-950 font-bold text-sm sm:text-base shadow-lg shadow-amber-500/20 hover:shadow-xl transition-all whitespace-nowrap min-h-[48px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
                 aria-label={`Call ${BUSINESS_INFO.displayPhone}`}
               >
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-slate-950" />
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-slate-950 shrink-0" />
                 <span>Call Now: {BUSINESS_INFO.phone}</span>
               </a>
 
+              {/* WhatsApp Button with Official WhatsApp Logo Icon */}
               <a
                 href={BUSINESS_INFO.whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-2.5 px-5 sm:px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-bold text-sm sm:text-base shadow-lg shadow-emerald-700/20 hover:shadow-xl transition-all whitespace-nowrap min-h-[48px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
               >
-                <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                <WhatsAppIcon className="w-5 h-5 text-white shrink-0" />
                 <span>Contact on WhatsApp</span>
               </a>
 
@@ -133,16 +131,16 @@ export function Hero({ onExploreServices }: HeroProps) {
                 {/* Continuous Looping Washbasin Water Leak & Plumber Repair Animated Visual */}
                 <WashbasinAnimation />
 
-                {/* Small, compact WhatsApp button in the corner so background image/animation remains fully visible */}
+                {/* Compact WhatsApp button in the corner with official WhatsApp Icon */}
                 <div className="absolute bottom-3 right-3 z-20 flex items-center gap-1.5">
                   <a
                     href={BUSINESS_INFO.whatsappUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-600/95 hover:bg-emerald-500 active:bg-emerald-700 text-white font-bold text-xs shadow-lg backdrop-blur-md border border-emerald-400/30 transition-all hover:scale-105"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-bold text-xs shadow-lg backdrop-blur-md border border-emerald-400/30 transition-all hover:scale-105"
                     aria-label="WhatsApp Roy Plumbing Services"
                   >
-                    <MessageSquare className="w-3.5 h-3.5 text-white" />
+                    <WhatsAppIcon className="w-3.5 h-3.5 text-white shrink-0" />
                     <span>WhatsApp</span>
                   </a>
                 </div>

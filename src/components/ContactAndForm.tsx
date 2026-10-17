@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Phone, MessageSquare, MapPin, Clock, Send, CheckCircle2, RotateCcw, Navigation, ExternalLink } from 'lucide-react';
+import { Phone, MapPin, Clock, Send, CheckCircle2, RotateCcw, Navigation, ExternalLink } from 'lucide-react';
 import { BUSINESS_INFO, SERVICES } from '../data/plumbingData';
 import { InquiryFormData } from '../types';
+import { WhatsAppIcon } from './WhatsAppIcon';
+import { useBrandLogo } from '../utils/useBrandLogo';
 
 interface ContactAndFormProps {
   preselectedService?: string;
@@ -12,6 +14,7 @@ export function ContactAndForm({
   preselectedService,
   onClearPreselectedService,
 }: ContactAndFormProps) {
+  const { logoUrl } = useBrandLogo();
   const [formData, setFormData] = useState<InquiryFormData>({
     fullName: '',
     phoneNumber: '',
@@ -113,7 +116,7 @@ export function ContactAndForm({
             <div className="bg-slate-900 text-white rounded-2xl p-7 shadow-lg border border-slate-800 space-y-6">
               <div className="flex items-center gap-4">
                 <img
-                  src={BUSINESS_INFO.logoImage}
+                  src={logoUrl}
                   alt="Roy Plumbing Services Official Logo"
                   referrerPolicy="no-referrer"
                   className="w-14 h-14 rounded-full object-contain p-0.5 ring-2 ring-amber-400/80 shadow-md shrink-0 bg-white"
@@ -201,7 +204,7 @@ export function ContactAndForm({
                   rel="noreferrer"
                   className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all shadow-md"
                 >
-                  <MessageSquare className="w-4 h-4 text-white" />
+                  <WhatsAppIcon className="w-4 h-4 text-white shrink-0" />
                   <span>WhatsApp Us</span>
                 </a>
               </div>
@@ -344,9 +347,9 @@ export function ContactAndForm({
                       href={buildWhatsAppRedirectUrl(submittedData)}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow transition-colors"
+                      className="inline-flex items-center justify-center gap-2.5 w-full py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-bold text-sm shadow transition-colors"
                     >
-                      <MessageSquare className="w-4 h-4" />
+                      <WhatsAppIcon className="w-5 h-5 text-white shrink-0" />
                       <span>Forward Request via WhatsApp</span>
                     </a>
                   </div>

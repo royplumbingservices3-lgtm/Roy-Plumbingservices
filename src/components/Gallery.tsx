@@ -3,6 +3,7 @@ import { GALLERY_ITEMS } from '../data/plumbingData';
 import { GalleryItem } from '../types';
 import { Maximize2, X, Phone, ArrowRight } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/plumbingData';
+import { WhatsAppIcon } from './WhatsAppIcon';
 
 interface GalleryProps {
   onSelectServiceForBooking: (serviceTitle: string) => void;
@@ -164,7 +165,7 @@ export function Gallery({ onSelectServiceForBooking }: GalleryProps) {
                     Sector 25, Rohini, Delhi · 24/7 Service
                   </div>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap items-center gap-2">
                     <button
                       type="button"
                       onClick={() => {
@@ -172,16 +173,27 @@ export function Gallery({ onSelectServiceForBooking }: GalleryProps) {
                         setSelectedItem(null);
                         onSelectServiceForBooking(title);
                       }}
-                      className="px-4 py-2 rounded-lg bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold transition-colors"
+                      className="px-3.5 py-2 rounded-lg bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold transition-colors"
                     >
-                      Book Similar Service
+                      Book Service
                     </button>
                     <a
+                      href={`https://wa.me/919582885917?text=${encodeURIComponent(
+                        `Hello Roy Plumbing Services, I saw "${selectedItem.title}" in your gallery. I need similar plumbing service.`
+                      )}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-3 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-colors inline-flex items-center gap-1.5"
+                    >
+                      <WhatsAppIcon className="w-3.5 h-3.5 text-white" />
+                      <span>WhatsApp</span>
+                    </a>
+                    <a
                       href={BUSINESS_INFO.phoneTel}
-                      className="px-4 py-2 rounded-lg bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-bold transition-colors inline-flex items-center gap-1.5"
+                      className="px-3 py-2 rounded-lg bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-bold transition-colors inline-flex items-center gap-1.5"
                     >
                       <Phone className="w-3.5 h-3.5" />
-                      Call Now
+                      <span>Call Now</span>
                     </a>
                   </div>
                 </div>

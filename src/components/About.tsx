@@ -1,8 +1,11 @@
-import { MapPin, Phone, MessageSquare, CheckCircle2 } from 'lucide-react';
+import { MapPin, Phone, CheckCircle2 } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/plumbingData';
+import { WhatsAppIcon } from './WhatsAppIcon';
+import { useBrandLogo } from '../utils/useBrandLogo';
 import indianPlumberWashbasinImage from '../assets/images/indian_plumber_washbasin_repair_1792142098176.jpg';
 
 export function About() {
+  const { logoUrl } = useBrandLogo();
   const highlights = [
     'Fast emergency response across Rohini Sector 25 and surrounding sectors',
     'Specialized in residential homes, apartments, and commercial complexes',
@@ -26,15 +29,15 @@ export function About() {
                   className="w-full h-80 object-cover"
                 />
                 {/* Official Brand Logo Badge */}
-                <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-md rounded-full py-1 px-2.5 shadow-lg border border-slate-200/90 flex items-center gap-2">
+                <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-md rounded-full py-1.5 px-3 shadow-lg border border-slate-200/90 flex items-center gap-2.5">
                   <img
-                    src={BUSINESS_INFO.logoImage}
+                    src={logoUrl}
                     alt="Roy Plumbing Services Brand Logo"
                     referrerPolicy="no-referrer"
-                    className="w-8 h-8 rounded-full object-contain p-0.5 ring-1 ring-blue-600/30 bg-white"
+                    className="w-9 h-9 rounded-full object-contain p-0.5 ring-2 ring-blue-600/40 bg-white"
                   />
                   <div className="leading-tight pr-1">
-                    <span className="text-[11px] font-black text-blue-950 uppercase block">ROY</span>
+                    <span className="text-[12px] font-black text-blue-950 uppercase block">ROY</span>
                     <span className="text-[9px] font-bold text-amber-600 uppercase tracking-wider block">Verified</span>
                   </div>
                 </div>
@@ -92,7 +95,7 @@ export function About() {
               ))}
             </div>
 
-            {/* Direct contact action row */}
+            {/* Direct contact action row with Official WhatsApp Icon */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-4">
               <a
                 href={BUSINESS_INFO.phoneTel}
@@ -106,9 +109,9 @@ export function About() {
                 href={BUSINESS_INFO.whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold text-sm shadow hover:shadow-md transition-all min-h-[46px]"
+                className="inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold text-sm shadow hover:shadow-md transition-all min-h-[46px]"
               >
-                <MessageSquare className="w-4 h-4 text-white" />
+                <WhatsAppIcon className="w-5 h-5 text-white shrink-0" />
                 <span>Chat on WhatsApp</span>
               </a>
             </div>
