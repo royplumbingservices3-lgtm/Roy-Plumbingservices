@@ -66,13 +66,38 @@ export function ContactAndForm({
     return Object.keys(errs).length === 0;
   };
 
+  const buildWhatsAppRedirectUrl = (data: InquiryFormData) => {
+    const lines = [
+      '🔧 *New Plumbing Service Request - Roy Plumbing Services*',
+      '',
+      `👤 *Customer Name:* ${data.fullName}`,
+      `📞 *Contact Number:* ${data.phoneNumber}`,
+      `📍 *Full Address:* ${data.address}`,
+      `🛠 *Service Required:* ${data.service}`,
+      `📝 *Problem Details:* ${data.message?.trim() || 'Please inspect and provide quote.'}`,
+      '',
+      '_Sent from royplumbingservices.in_'
+    ];
+    return `https://api.whatsapp.com/send?phone=919582885917&text=${encodeURIComponent(lines.join('\n'))}`;
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
-    // Process submission
+    // Process submission state
     setSubmittedData({ ...formData });
     setIsSubmitted(true);
+
+    // Open WhatsApp in a new tab so it is not blocked by iframe X-Frame-Options
+    const whatsappUrl = buildWhatsAppRedirectUrl(formData);
+    const link = document.createElement('a');
+    link.href = whatsappUrl;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const handleReset = () => {
@@ -89,11 +114,6 @@ export function ContactAndForm({
     if (onClearPreselectedService) {
       onClearPreselectedService();
     }
-  };
-
-  const buildWhatsAppRedirectUrl = (data: InquiryFormData) => {
-    const text = `Hello Roy Plumbing Services, I need plumbing services.\n\nName: ${data.fullName}\nPhone: ${data.phoneNumber}\nFull Address: ${data.address}\nService: ${data.service}\nDetails: ${data.message || 'Please contact me for inspection.'}`;
-    return `https://wa.me/919582885917?text=${encodeURIComponent(text)}`;
   };
 
   return (
@@ -479,14 +499,14 @@ export function ContactAndForm({
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-blue-700 hover:bg-blue-800 active:bg-blue-900 text-white font-bold text-sm sm:text-base shadow-sm hover:shadow transition-all min-h-[48px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+                    className="w-full inline-flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-bold text-base shadow-sm hover:shadow transition-all min-h-[50px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
                   >
-                    <Send className="w-4 h-4 text-amber-300" />
-                    <span>Request a Plumbing Service</span>
+                    <WhatsAppIcon className="w-5 h-5 text-white shrink-0" />
+                    <span>Send Lead via WhatsApp (व्हाट्सएप पर भेजें)</span>
                   </button>
 
-                  <p className="text-[11px] text-slate-400 text-center">
-                    No spam. We contact you solely regarding your plumbing service request.
+                  <p className="text-xs text-slate-500 text-center flex items-center justify-center gap-1.5">
+                    <span>⚡ Form submit karte hi aapki lead direct Roy Plumbing ke WhatsApp par send ho jayegi.</span>
                   </p>
                 </form>
               )}

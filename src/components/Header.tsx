@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Phone, Menu, X, Image as ImageIcon } from 'lucide-react';
+import { Phone, Menu, X } from 'lucide-react';
 import { Logo } from './Logo';
 import { WhatsAppIcon } from './WhatsAppIcon';
-import { LogoUploadModal } from './LogoUploadModal';
 import { BUSINESS_INFO } from '../data/plumbingData';
 
 interface HeaderProps {
@@ -12,7 +11,6 @@ interface HeaderProps {
 export function Header({ onSelectService: _ }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isLogoModalOpen, setIsLogoModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -90,16 +88,7 @@ export function Header({ onSelectService: _ }: HeaderProps) {
                 <span>{BUSINESS_INFO.phone}</span>
               </a>
 
-              {/* Optional Quick Logo Change Tool for user */}
-              <button
-                type="button"
-                onClick={() => setIsLogoModalOpen(true)}
-                title="लोगो बदलें या चेक करें (Change/Upload Logo)"
-                className="hidden xl:inline-flex items-center gap-1 px-2.5 py-2 text-xs font-semibold text-slate-500 hover:text-blue-700 hover:bg-slate-100 rounded-lg transition-colors border border-slate-200"
-              >
-                <ImageIcon className="w-3.5 h-3.5 text-blue-600" />
-                <span>लोगो बदलें</span>
-              </button>
+
 
               {/* Mobile Menu Toggle Button */}
               <button
@@ -177,28 +166,10 @@ export function Header({ onSelectService: _ }: HeaderProps) {
                 <Phone className="w-4 h-4 text-amber-300 shrink-0" />
                 <span>Call {BUSINESS_INFO.displayPhone}</span>
               </a>
-
-              <button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  setIsLogoModalOpen(true);
-                }}
-                className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs transition-colors"
-              >
-                <ImageIcon className="w-3.5 h-3.5 text-blue-600" />
-                <span>लोगो बदलें / Upload Logo</span>
-              </button>
             </div>
           </div>
         </div>
       )}
-
-      {/* Logo Upload Modal */}
-      <LogoUploadModal
-        isOpen={isLogoModalOpen}
-        onClose={() => setIsLogoModalOpen(false)}
-      />
     </>
   );
 }
