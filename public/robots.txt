@@ -1,0 +1,6 @@
+# Robots.txt for Roy Plumbing Services
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://royplumbingservices.in/sitemap.xml
